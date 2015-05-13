@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -42,6 +43,8 @@ class Post
      * @var Comment[]
      *
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", cascade={"all"})
+     *
+     * @Serializer\Exclude()
      */
     private $comments;
 
